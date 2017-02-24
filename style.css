@@ -1,0 +1,50 @@
+.GeoItem {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.form-control {
+    display: inline-block;
+    width: 25%;
+
+}
+#searchInput {
+    display: inline-block;
+    width: 25%;
+}
+.text_block {
+    width: 30%;
+    display: inline-block;
+    padding: 10px;
+    margin: 15px;
+    border: 1px #cccccc solid;
+    border-radius: 10px;
+}
+.text_block >.close {
+   color: red
+}
+.text_block > .close:hover {
+    color: gray
+}
+#list li{
+    border: 2px solid red;
+    margin: 10px;
+    list-style: none;
+}
+#list li p {
+    padding: 5px;
+    margin: 0px
+}
+
+#list li:hover {
+    border: 2px solid #cccccc;
+}
+
+#list li span {
+
+}
+
+#close:hover {
+    color: red;
+}
