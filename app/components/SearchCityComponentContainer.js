@@ -22,28 +22,20 @@ class SearchCityComponentContainer extends React.Component {
 
         API.getCurrent(cityName).then((data) => {
             this.props.onAddCity(data.data);
-            console.log(data.data.main.humidity)
-
         })
     }
 
     render(){
-        console.log(this.props.state.id);
-
-
-
+        console.log(this.props.state);
 
         return(
             <div>
-
-                <Input id="searchInput" type="text"  ref={(input)=> {this.cityInput = input}}/>
+                <input id="searchInput" type="text"  ref={(input)=> {this.cityInput = input}}/>
                 <Button color="danger" onClick={this.addCity.bind(this)}>Add city</Button>
-                <ul id="ul">
-                    {(this.props.state.added)
-                        ?  this.props.state.id.map((into, index)=>{
-                        return <OneCityComponent key={index} cityData={this.props.state}/>
+                <ul id="wrapper">
+                     {this.props.state.cities.map((into , index) => {
+                        return <OneCityComponent  id="citId" key={index} cityId={into.id} into={into} />
                     })
-                        : <li>false</li>
                     }
                 </ul>
             </div>
@@ -58,8 +50,7 @@ export default connect(
         onAddCity: (cityData) => {
             dispatch({
                 type: 'ADD_CITY',
-                cityData,
-                added: true
+                name: cityData.name
             })
         }
     })

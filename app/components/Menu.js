@@ -5,7 +5,6 @@ import { Jumbotron, Container,  Row, Col} from 'reactstrap';
 class Menu extends React.Component {
 
 
-
     render(){
         return(
             <div>
@@ -16,7 +15,7 @@ class Menu extends React.Component {
                                 <h1>Simple Weather App</h1>
                             </Col>
                         </Row>
-                <Link to="/GeoForecastComponentContainer"><Button color="danger">Forecast by Geo</Button> </Link>
+                <Link to="/GeoForecastComponentContainer"><Button color="danger">Forecas (geo)</Button> </Link>
                 <Link to="/SearchCityComponentContainer"><Button color="danger" >Serach city</Button></Link>
                 <div>
                 </div>

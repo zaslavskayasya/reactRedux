@@ -9,29 +9,28 @@ import { Provider } from 'react-redux';
 import {createStore} from 'redux';
 import './node_modules/bootstrap/dist/css/bootstrap.css';
 
+
 function city(state = {
-    name: [],
-    id: [],
-    clouds: [],
-    added: false,
-    deleted: false,
+    current_city: {},
+    cities: []
 }, action) {
+    if (action.type === 'CHOOSE_CITY') {
+        return{
+            ...state,
+        }
+    } else
     if (action.type === 'ADD_CITY') {
         return{
             ...state,
-            id: [...state.id, action.cityData.id,] ,
-            name: [...state.name, action.cityData.name,] ,
-            clouds: [...state.clouds, action.cityData.main.humidity,] ,
-            added: true,
+            cities: [...state.cities, action.name,] ,
         }
-    }
-    else if (action.type === 'DELETE_CITY') {
+    } else if (action.type === "DELETE_CITY") {
+        let indexC = action.index;
+        let arrayC = state.cities;
+        console.log(indexC);
         return{
             ...state,
-            deleted: true,
-
-
-
+          cities: arrayC.splice(indexC, 1),
         }
     }
     return state;
