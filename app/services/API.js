@@ -6,7 +6,7 @@ let API = {
         return new Promise (function (resolve, reject) {
             axios.get('http://api.openweathermap.org/data/2.5/weather?q='
                 + cityName + '&APPID=10f85ac758b2669f8007875b727e20f8'
-            ).then(function(data){
+            , ).then(function(data){
                 resolve(data);
                  console.log(data);
             })
